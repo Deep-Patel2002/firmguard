@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">FirmGuard — firmware manifest parser</title>
+  <desc id="desc">Engineering diagram of a bounded FGMF v1 reader that validates binary fields and semantic constraints, then compares independent C11 and safe Rust parsers using a differential corpus. Invalid manifests are rejected. The parser does not authenticate or install firmware.</desc>
+  <defs>
+    <style>
+      text{font-family:Inter,Segoe UI,Arial,sans-serif}.ink{fill:#172b4d}.muted{fill:#52637a}.outline{stroke:#cad5e2;stroke-width:1.5}.flow{stroke:#52637a;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#52637a" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="630" fill="#f4f7fb"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#1677c8"/>
+  <text x="56" y="65" class="ink" font-size="18" font-weight="700" letter-spacing="2.5">SYSTEMS SECURITY · PROJECT OVERVIEW</text>
+  <text x="54" y="132" class="ink" font-size="54" font-weight="750">FirmGuard</text>
+  <text x="58" y="169" class="muted" font-size="21">Bounded firmware manifest parsing in C11 and safe Rust</text>
+  <text x="58" y="219" class="muted" font-size="13" font-weight="700" letter-spacing="1.5">UNTRUSTED INPUT · PROJECT-OWNED FGMF V1 FORMAT</text>
+  <line x1="58" y1="231" x2="1142" y2="231" stroke="#cbd5e1" stroke-width="1"/>
+
+  <rect x="58" y="271" width="177" height="138" rx="10" fill="#ffffff" class="outline"/>
+  <text x="78" y="307" class="muted" font-size="12" font-weight="700" letter-spacing="1">BINARY MANIFEST</text>
+  <text x="78" y="341" class="ink" font-size="19" font-weight="700">FGMF bytes</text>
+  <text x="78" y="369" class="muted" font-size="14">hostile metadata</text>
+  <text x="78" y="392" class="muted" font-size="13">input capped at 64 KiB</text>
+
+  <path d="M238 340H267" class="flow"/>
+  <rect x="275" y="271" width="229" height="138" rx="10" fill="#ffffff" class="outline"/>
+  <text x="297" y="307" class="muted" font-size="12" font-weight="700" letter-spacing="1">BOUNDED VALIDATION</text>
+  <text x="297" y="341" class="ink" font-size="19" font-weight="700">Structure</text>
+  <text x="297" y="369" class="muted" font-size="14">Header · TLV · lengths</text>
+  <text x="297" y="392" class="muted" font-size="14">Fields · paths · ranges</text>
+
+  <path d="M507 340H535" class="flow"/>
+  <rect x="543" y="253" width="260" height="91" rx="10" fill="#edf4fb" stroke="#9bb7d2" stroke-width="1.5"/>
+  <text x="565" y="283" class="muted" font-size="12" font-weight="700" letter-spacing="1">IMPLEMENTATION A</text>
+  <text x="565" y="316" class="ink" font-size="22" font-weight="700">C11 parser</text>
+  <text x="565" y="337" class="muted" font-size="13">borrowed view · no heap allocation</text>
+  <rect x="543" y="363" width="260" height="91" rx="10" fill="#f1f0fb" stroke="#aaa7d2" stroke-width="1.5"/>
+  <text x="565" y="393" class="muted" font-size="12" font-weight="700" letter-spacing="1">IMPLEMENTATION B</text>
+  <text x="565" y="426" class="ink" font-size="22" font-weight="700">Safe Rust parser</text>
+  <text x="565" y="447" class="muted" font-size="13">borrowed view · no unsafe core</text>
+
+  <path d="M806 298H833V335H858" class="flow"/>
+  <path d="M806 408H833V365H858" class="flow"/>
+  <rect x="866" y="286" width="276" height="132" rx="12" fill="#edf8f4" stroke="#76b9a2" stroke-width="1.5"/>
+  <text x="888" y="322" fill="#13795b" font-size="12" font-weight="700" letter-spacing="1">DIFFERENTIAL CORPUS</text>
+  <text x="888" y="356" class="ink" font-size="19" font-weight="700">Compare full results</text>
+  <text x="888" y="383" class="muted" font-size="14">status + accepted representation</text>
+  <text x="888" y="405" fill="#13795b" font-size="13" font-weight="600">316 cases · zero disagreements</text>
+
+  <rect x="58" y="477" width="1084" height="91" rx="10" fill="#eaf0f8"/>
+  <text x="82" y="510" class="muted" font-size="12" font-weight="700" letter-spacing="1">FAIL CLOSED</text>
+  <text x="82" y="544" class="ink" font-size="18" font-weight="600">Malformed input → reject · clear C output · no extraction or flashing</text>
+  <text x="58" y="600" class="muted" font-size="13">Parser validates metadata structure and consistency; authenticity and update decisions remain with the caller.</text>
+  <text x="1142" y="600" class="muted" font-size="12" text-anchor="end">C11 · RUST · FUZZING</text>
+</svg>
