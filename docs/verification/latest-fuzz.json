@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-25T23:42:44.909437+00:00",
+  "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "architecture": "x86_64",
+  "seed_cases": 316,
+  "requested_seconds": 30,
+  "exit_code": 0,
+  "executed_units": 3535719,
+  "average_exec_per_second": 114055,
+  "edges_covered": null,
+  "feature_count": null,
+  "artifact_count": 0,
+  "libfuzzer_output_tail": "\"\\000\\000\\000\\000\" # Uses: 30042\n\"partition/16.bin\" # Uses: 29808\n\"\\001\\000\\020\\000\" # Uses: 29902\n\"\\377\\377O\\360\\000\\030]x\" # Uses: 29211\n\"\\001\\000\" # Uses: 29141\n\"\\000\\000P\\360\\000\\022\\342/\" # Uses: 28907\n\"partition/.2.bin\" # Uses: 27510\n\"partition/615bin\" # Uses: 25655\n\"\\262\\377\\377\\377\" # Uses: 24518\n###### End of recommended dictionary. ######\nDone 3535719 runs in 31 second(s)\nstat::number_of_executed_units: 3535719\nstat::average_exec_per_sec:     114055\nstat::new_units_added:          126\nstat::slowest_unit_time_sec:    0\nstat::peak_rss_mb:              519"
+}

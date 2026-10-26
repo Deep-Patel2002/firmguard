@@ -1,0 +1,8 @@
+{
+  "corpus": "generated FGMF v1 boundaries plus deterministic bit flips",
+  "cases": 316,
+  "accepted": 114,
+  "rejected": 202,
+  "matching_representations": 316,
+  "mismatches": []
+}

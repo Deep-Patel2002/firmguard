@@ -1,0 +1,80 @@
+{
+  "recorded_at_utc": "2026-10-25T23:42:08.403486+00:00",
+  "purpose": "bounded in-memory parse throughput; excludes payload I/O and trust verification",
+  "environment": {
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python": "3.12.3",
+    "rustc": "rustc 1.75.0 (82e1608df 2023-12-21) (built from a source tarball)",
+    "cc": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "method": {
+    "iterations": 50000,
+    "repeats": 3,
+    "workloads": [
+      "1 image",
+      "64 images"
+    ],
+    "warm_process_per_sample": true,
+    "slo_claim": false
+  },
+  "results": [
+    {
+      "parser": "c11",
+      "images_per_manifest": 1,
+      "manifest_bytes": 172,
+      "iterations_per_sample": 50000,
+      "repeat_ns": [
+        14058101,
+        14133601,
+        14029700
+      ],
+      "median_ns": 14058101,
+      "manifests_per_second": 3556668.14,
+      "microseconds_per_manifest": 0.2812
+    },
+    {
+      "parser": "rust",
+      "images_per_manifest": 1,
+      "manifest_bytes": 172,
+      "iterations_per_sample": 50000,
+      "repeat_ns": [
+        16266616,
+        15864913,
+        15870113
+      ],
+      "median_ns": 15870113,
+      "manifests_per_second": 3150576.18,
+      "microseconds_per_manifest": 0.3174
+    },
+    {
+      "parser": "c11",
+      "images_per_manifest": 64,
+      "manifest_bytes": 7480,
+      "iterations_per_sample": 50000,
+      "repeat_ns": [
+        551215736,
+        543788483,
+        552089342
+      ],
+      "median_ns": 551215736,
+      "manifests_per_second": 90708.59,
+      "microseconds_per_manifest": 11.0243
+    },
+    {
+      "parser": "rust",
+      "images_per_manifest": 64,
+      "manifest_bytes": 7480,
+      "iterations_per_sample": 50000,
+      "repeat_ns": [
+        492564318,
+        494429831,
+        495209037
+      ],
+      "median_ns": 494429831,
+      "manifests_per_second": 101126.58,
+      "microseconds_per_manifest": 9.8886
+    }
+  ]
+}

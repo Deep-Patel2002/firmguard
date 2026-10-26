@@ -1,0 +1,16 @@
+/build/
+/target/
+/rust/target/
+/out/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.profraw
+*.profdata
+__pycache__/
+.venv/
