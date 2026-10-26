@@ -1,5 +1,7 @@
 # FirmGuard
 
+![FirmGuard project thumbnail](docs/thumbnails/firmguard.png)
+
 ![CI](https://github.com/Deep-Patel2002/firmguard/actions/workflows/ci.yml/badge.svg) ![C11](https://img.shields.io/badge/C-C11-00599C?logo=c) ![Rust](https://img.shields.io/badge/Rust-1.75%2B-000000?logo=rust) ![License](https://img.shields.io/badge/license-MIT-green)
 
 **A bounded C11 and safe Rust firmware manifest parser, built to examine hostile metadata before an update coordinator makes component or payload decisions.**
